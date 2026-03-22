@@ -1,0 +1,50 @@
+nav {
+    background-color: #484848;
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 80%;
+}
+
+.linksTipoDeProduto, .linksSecoes, #botaoFechar {
+    background-color: transparent;
+    border: none;
+    color: #fdfdfd;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    padding: 0.75rem 0 0.75rem 1.25rem;
+    text-align: left;
+}
+
+#botaoFechar {
+    font-weight: bold;
+    padding-right: 1rem;
+    text-align: right;
+}
+
+.linksTipoDeProduto:hover, .linksSecoes:hover, #botaoFechar:hover {
+    background-color: #777;
+    color: #dedede;
+}
+
+.linksSecoes {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        display: flex;
+        height: 80.5vh;
+        position: fixed;
+        top: 10rem;
+        width: 23%;
+    }
+
+    #botaoFechar {
+        display: none;
+    }
+}

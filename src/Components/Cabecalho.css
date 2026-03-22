@@ -1,0 +1,53 @@
+.header {
+    align-items: center;
+    background-color: #484848;
+    display: flex;
+    justify-content: space-between;
+    height: 4.28rem;
+}
+
+.header a {
+    height: 100%;
+}
+
+.logotipo {
+    height: 4.2rem;
+    width: 4.28rem;
+}
+
+.menuHamburger {
+    background-color: transparent;
+    border: none;
+    color: #fdfdfd;
+    margin-right: 0.5rem;
+}
+
+#iconHamburger {
+    font-size: 1.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        background-color: #484848;
+        height: 10.5rem;
+        position: fixed;
+        top: 0;
+        width: 23%;
+    }
+
+    .header a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logotipo {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .menuHamburger {
+        display: none;
+    }
+}

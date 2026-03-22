@@ -1,0 +1,16 @@
+footer {
+    background-color: #0f0f0f;
+    color: #fdfdfd;
+    font-family: 'Trebuchet MS', sans-serif;
+    height: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        left: 23%;
+        position: relative;
+        width: 77%;
+    }
+}

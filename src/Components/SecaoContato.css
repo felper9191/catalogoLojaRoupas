@@ -1,0 +1,24 @@
+.secaoContato {
+    background-color: #e5e5e5;
+    padding: 1.5rem 0;
+}
+
+.mensagemContato, .telefoneContato, .detalheContato {
+    color: #0f0f0f;
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: bold;
+    margin: 1rem;
+    text-align: center;
+}
+
+.mensagemContato {
+    font-size: 1.45rem;
+}
+
+@media screen and (min-width: 768px) {
+    .secaoContato {
+        left: 23%;
+        position: relative;
+        width: 77%;
+    }
+}

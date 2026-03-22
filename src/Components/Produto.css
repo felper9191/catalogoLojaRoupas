@@ -1,0 +1,40 @@
+.produto {
+    background-color: #777;
+    cursor: pointer;
+    margin: 1rem 0;
+    margin-right: 1.335%;
+    width: 100%;
+}
+
+.conteinerFoto {
+    width: 100%;
+}
+
+.fotoProduto {
+    height: 70vw;
+    width: 100%;
+}
+
+.descricaoProduto {
+    background-color: #777;
+    color: #fdfdfd;
+    font-family: 'Gill Sans', sans-serif;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.descricaoProduto p {
+    padding: 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    .produto {
+        width: 24%;
+    }
+    .produto:nth-child(4n) {
+        margin-right: 0;
+    }
+    .fotoProduto {
+        height: 12.5vw;
+    }
+}

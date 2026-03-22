@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    article {
+        left: 23.5%;
+        padding: 0.5rem 0 0 0;
+        position: relative;
+        width: 75.5%;
+    }
+}
