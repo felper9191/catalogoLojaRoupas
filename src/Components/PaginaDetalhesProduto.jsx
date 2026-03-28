@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { blusas, calcas, camisas, jaquetas, lancamentos, saias, shorts, vestidos } from "../pages/ListaTodosProdutos.jsx";
 
 const PaginaDetalhesProduto = () => {
 
