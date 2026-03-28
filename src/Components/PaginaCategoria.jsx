@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useLocation } from 'react-router-dom';
 import { useSearch } from "../Context/SearchContext";
 import { listaProdutos } from "../dados/produtos"; // O array unificado
 
 import Produto from "../Components/Produto";
 import HeaderProduto from "../Components/HeaderProduto";
-import "PaginaCategoria.css"
+import "./PaginaCategoria.css"
 
 const PaginaCategoria = () => {
     const { tipo } = useParams(); // Pega 'blusas', 'saias', etc., da URL
@@ -30,7 +30,9 @@ const PaginaCategoria = () => {
 
     // 3. LOGICA DE FILTRAGEM
     // Primeiro filtramos pela categoria da URL, depois pelo termo de busca
-    const produtosDaCategoria = listaProdutos.filter(item => item.categoria === tipo);
+    const produtosDaCategoria = tipo 
+        ? listaProdutos.filter(item => item.categoria === tipo) 
+        : listaProdutos; // Se não tem tipo (Home), pega o array inteiro
     
     const filteredList = produtosDaCategoria.filter((item) => 
         item.nome.toLowerCase().includes(searchTerm.toLowerCase())
@@ -43,12 +45,18 @@ const PaginaCategoria = () => {
         setQuantidadeExibida(prev => prev + 8);
     };
 
+    const tituloExibido = tipo 
+        ? tipo.charAt(0).toUpperCase() + tipo.slice(1) 
+        : "Nosso Catálogo"; // Título padrão para a Home
+
     return (
         <div className="listaDeProdutos" ref={topoDaPaginaRef}>
             {/* O título agora é dinâmico com base na URL */}
-            <HeaderProduto nomeProduto={tipo.charAt(0).toUpperCase() + tipo.slice(1)} />
+            <HeaderProduto nomeProduto={tituloExibido} />
             
-            <p className="quantidadeItens">{filteredList.length} itens encontrados</p>
+            <p className="quantidadeItens">
+               Exibindo {produtosVisiveis.length} de {filteredList.length} produtos
+            </p>
             
             <div className="conteinerProduto">
                 {produtosVisiveis.length > 0 ? (

@@ -20,6 +20,9 @@ export const listaProdutos = [
     // CALÇAS
     { id: 'c1', nome: 'Calça01', caminho: '../../img/calcas/calca01.jpg', preco: 65.00, categoria: 'calcas' },
     { id: 'c12', nome: 'Calça12', caminho: '../../img/calcas/calca01.jpg', preco: 37.00, categoria: 'calcas' },
+    // CAMISAS
+    { id: 'cm1', nome: 'Camisa01', caminho: '../../img/camisas/camisa01.jpg', preco: 965.00, categoria: 'camisas' },
+    { id: 'cm12', nome: 'Camisa12', caminho: '../../img/camisas/camisa01.jpg', preco: 237.00, categoria: 'camisas' },
 
     // VESTIDOS
     { id: 'v1', nome: 'Vestidos01', caminho: '../../img/vestidos/vestido01.jpg', preco: 65.00, categoria: 'vestidos' },

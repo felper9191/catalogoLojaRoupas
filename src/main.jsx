@@ -6,7 +6,6 @@ import App from './App.jsx';
 import './index.css';
 
 // IMPORTAÇÕES ESSENCIAIS
-import ListaProdutosHome from './pages/ListaProdutosHome.jsx';
 import PaginaCategoria from './Components/PaginaCategoria.jsx'; // O novo componente único
 import PaginaDetalhesProduto from './Components/PaginaDetalhesProduto.jsx';
 
@@ -22,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route element={<App />}>
             {/* 1. Página Inicial */}
-            <Route path="/" element={<ListaProdutosHome />} />
+            <Route path="/" element={<PaginaCategoria />} />
 
             {/* 2. ROTA DINÂMICA: Substitui todas as listas individuais */}
             {/* O ":tipo" vai aceitar 'blusas', 'saias', 'calcas', etc. */}
