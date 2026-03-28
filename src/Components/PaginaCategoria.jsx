@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation } from 'react-router-dom';
 import { useSearch } from "../Context/SearchContext";
-import { listaProdutos } from "../data/produtos"; // O array unificado
+import { listaProdutos } from "../dados/produtos"; // O array unificado
 
 import Produto from "../Components/Produto";
 import HeaderProduto from "../Components/HeaderProduto";
-import './ListaProdutos.css';
+import "PaginaCategoria.css"
 
 const PaginaCategoria = () => {
     const { tipo } = useParams(); // Pega 'blusas', 'saias', etc., da URL
     const { searchTerm, setSearchTerm } = useSearch();
     const location = useLocation();
 
+    const topoDaPaginaRef = useRef(null);
     // 1. Estado para a paginação (limite inicial de 8 itens)
     const [quantidadeExibida, setQuantidadeExibida] = useState(8);
 
@@ -19,6 +20,12 @@ const PaginaCategoria = () => {
     useEffect(() => {
         setSearchTerm(''); 
         setQuantidadeExibida(8); // Volta para 8 itens quando trocar de 'blusas' para 'saias'
+        if (topoDaPaginaRef.current) {
+            topoDaPaginaRef.current.scrollIntoView({ 
+                behavior: 'smooth', // Deixa o movimento suave
+                block: 'start'      // Alinha o topo do componente com o topo da tela
+            });
+        }
     }, [location.pathname, setSearchTerm]);
 
     // 3. LOGICA DE FILTRAGEM
@@ -37,7 +44,7 @@ const PaginaCategoria = () => {
     };
 
     return (
-        <div className="listaDeProdutos">
+        <div className="listaDeProdutos" ref={topoDaPaginaRef}>
             {/* O título agora é dinâmico com base na URL */}
             <HeaderProduto nomeProduto={tipo.charAt(0).toUpperCase() + tipo.slice(1)} />
             
