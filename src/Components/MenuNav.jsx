@@ -10,17 +10,17 @@ const MenuNav = () => {
     return (
         <nav id='menuNav'>
             <button onClick={fechaMenu} id='botaoFechar'>X</button>
-            <Link className='linksTipoDeProduto' to="listaProdutosSaias">Saias</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosShorts">Shorts</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosCalcas">Calças</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosCamisas">Camisas</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosBlusas">Blusas</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosVestidos">Vestidos</Link>
-            <Link className='linksTipoDeProduto' to="listaProdutosJaquetas">Jaquetas</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/saias">Saias</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/shorts">Shorts</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/calcas">Calças</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/camisas">Camisas</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/blusas">Blusas</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/vestidos">Vestidos</Link>
+            <Link className='linksTipoDeProduto' to="/produtos/jaquetas">Jaquetas</Link>
 
             <a className='linksSecoes' href="#contato">Contato</a>
-            <Link className='linksSecoes' to="listaProdutos">Sobre</Link>
-            <Link className='linksSecoes' to="listaProdutos">Cadastrar</Link>
+            <Link className='linksSecoes' to="#">Sobre</Link>
+            <Link className='linksSecoes' to="#">Cadastrar</Link>
         </nav>
     );
 };
