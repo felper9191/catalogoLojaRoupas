@@ -9,7 +9,7 @@ const PaginaDetalhesProduto = () => {
 
     // Procuramos o produto dentro do array unificado usando o ID
     // Usamos Number(id) porque o que vem da URL é uma string
-    const produto = listaProdutos.find(item => item.id === Number(id));
+    const produto = listaProdutos.find(item => item.id === id);
 
     // Caso o produto não seja encontrado (ex: o usuário digitou um ID que não existe)
     if (!produto) {
