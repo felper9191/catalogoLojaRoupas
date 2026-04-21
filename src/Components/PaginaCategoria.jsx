@@ -20,13 +20,7 @@ const PaginaCategoria = () => {
     useEffect(() => {
         setSearchTerm(''); 
         setQuantidadeExibida(8); // Volta para 8 itens quando trocar de 'blusas' para 'saias'
-        if (topoDaPaginaRef.current) {
-            topoDaPaginaRef.current.scrollIntoView({ 
-                behavior: 'smooth', // Deixa o movimento suave
-                block: 'start'      // Alinha o topo do componente com o topo da tela
-            });
-        }
-    }, [location.pathname, setSearchTerm]);
+    }, [location.pathname, tipo, setSearchTerm]);
 
     // 3. LOGICA DE FILTRAGEM
     // Primeiro filtramos pela categoria da URL, depois pelo termo de busca
