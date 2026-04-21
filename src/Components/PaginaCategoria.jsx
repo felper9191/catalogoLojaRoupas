@@ -60,7 +60,7 @@ const PaginaCategoria = () => {
                             key={value.id} 
                             path={value.caminho} 
                             nome={value.nome} 
-                            preco={value.preco} 
+                            preco={value.preco.toFixed(2).replace('.', ',')} 
                             id={value.id}
                         />
                     ))

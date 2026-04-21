@@ -1,6 +1,6 @@
 export const listaProdutos = [
     // BLUSAS
-    { id: 'b1', nome: 'Blusa01', caminho: '../../img/blusas/blusa01.jpg', preco: 65.00, categoria: 'blusas' },
+    { id: 'b1', nome: 'Blusa01', caminho: '../../img/blusas/blusa01.jpg', preco: 65.89, categoria: 'blusas' },
     { id: 'b2', nome: 'Blusa02', caminho: '../../img/blusas/blusa01.jpg', preco: 40.00, categoria: 'blusas' },
     { id: 'b3', nome: 'Blusa03', caminho: '../../img/blusas/blusa01.jpg', preco: 80.00, categoria: 'blusas' },
     { id: 'b4', nome: 'Blusa04', caminho: '../../img/blusas/blusa01.jpg', preco: 77.00, categoria: 'blusas' },

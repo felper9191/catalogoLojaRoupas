@@ -1,0 +1,138 @@
+/* Container Principal */
+.paginaDetalhes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Layout em Duas Colunas */
+.containerDetalhes {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+/* Lado Esquerdo: Imagem */
+.imagemProduto {
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.fotoProdutoDetalhe {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.fotoProdutoDetalhe:hover {
+    transform: scale(1.02);
+}
+
+/* Lado Direito: Informações */
+.infoProduto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nomeDetalhe {
+    font-size: 2.2rem;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+}
+
+.categoriaDetalhe {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.precoDetalhe {
+    font-size: 1.8rem;
+    color: #27ae60; /* Verde para destacar o preço */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.descricaoFicticia {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.descricaoFicticia h3 {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.descricaoFicticia p {
+    line-height: 1.6;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Botões */
+.botaoComprar {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.botaoComprar:hover {
+    background-color: #555;
+}
+
+.botaoVoltar {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.botaoVoltar:hover {
+    color: #333;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 768px) {
+    .containerDetalhes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nomeDetalhe {
+        font-size: 1.8rem;
+    }
+
+    .imagemProduto {
+        width: 100%;
+    }
+
+    .fotoProdutoDetalhe {
+        max-width: 100%;
+    }
+}

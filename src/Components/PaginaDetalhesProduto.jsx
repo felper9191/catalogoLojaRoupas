@@ -28,7 +28,7 @@ const PaginaDetalhesProduto = () => {
 
             <div className="containerDetalhes">
                 <div className="imagemProduto">
-                    <img src={produto.caminho} alt={produto.nome} />
+                    <img className="fotoProdutoDetalhe" src={produto.caminho} alt={produto.nome} />
                 </div>
 
                 <div className="infoProduto">
