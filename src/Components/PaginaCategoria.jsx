@@ -61,6 +61,7 @@ const PaginaCategoria = () => {
                             path={value.caminho} 
                             nome={value.nome} 
                             preco={value.preco} 
+                            id={value.id}
                         />
                     ))
                 ) : (
