@@ -3,7 +3,7 @@ import './Rodape.css';
 const Rodape = () => {
     return (
         <footer>
-            <p>Powered by known</p>
+            <p>Powered by Unknown</p>
         </footer>
     );
 };
