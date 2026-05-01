@@ -1,55 +1,55 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useParams, useLocation, useSearchParams } from 'react-router-dom';
 import { useSearch } from "../Context/SearchContext";
-import { listaProdutos } from "../dados/produtos"; // O array unificado
+import { listaProdutos } from "../dados/produtos"; 
 
 import Produto from "../Components/Produto";
 import HeaderProduto from "../Components/HeaderProduto";
 import "./PaginaCategoria.css"
 
 const PaginaCategoria = () => {
-    const { tipo } = useParams(); // Pega 'blusas', 'saias', etc., da URL
+    const { tipo } = useParams(); 
     const { searchTerm, setSearchTerm } = useSearch();
     const location = useLocation();
+    
+    // Gerencia a URL para manter a quantidade de itens ao voltar a página
+    const [searchParams, setSearchParams] = useSearchParams();
+    const quantidadeExibida = parseInt(searchParams.get('limit')) || 8;
 
-    const topoDaPaginaRef = useRef(null);
-    // 1. Estado para a paginação (limite inicial de 8 itens)
-    const [quantidadeExibida, setQuantidadeExibida] = useState(8);
-
-    // 2. Resetar busca e paginação sempre que mudar de categoria (URL)
+    // Apenas limpa a barra de busca ao trocar de categoria
     useEffect(() => {
         setSearchTerm(''); 
-        setQuantidadeExibida(8); // Volta para 8 itens quando trocar de 'blusas' para 'saias'
-    }, [location.pathname, tipo, setSearchTerm]);
+    }, [location.pathname, setSearchTerm]);
 
-    // 3. LOGICA DE FILTRAGEM
-    // Primeiro filtramos pela categoria da URL, depois pelo termo de busca
+    // LÓGICA DE FILTRAGEM
     const produtosDaCategoria = tipo 
         ? listaProdutos.filter(item => item.categoria === tipo) 
-        : listaProdutos; // Se não tem tipo (Home), pega o array inteiro
+        : listaProdutos; 
     
     const filteredList = produtosDaCategoria.filter((item) => 
         item.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // 4. Aplicar o limite da paginação (slice)
+    // Aplica o limite baseado na URL
     const produtosVisiveis = filteredList.slice(0, quantidadeExibida);
 
     const carregarMais = () => {
-        setQuantidadeExibida(prev => prev + 8);
+        setSearchParams(parametrosAnteriores => {
+            parametrosAnteriores.set('limit', quantidadeExibida + 8);
+            return parametrosAnteriores;
+        });
     };
 
     const tituloExibido = tipo 
         ? tipo.charAt(0).toUpperCase() + tipo.slice(1) 
-        : "Nosso Catálogo"; // Título padrão para a Home
+        : "Nosso Catálogo"; 
 
     return (
-        <div className="listaDeProdutos" ref={topoDaPaginaRef}>
-            {/* O título agora é dinâmico com base na URL */}
+        <div className="listaDeProdutos">
             <HeaderProduto nomeProduto={tituloExibido} />
             
             <p className="quantidadeItens">
-               Exibindo {produtosVisiveis.length} de {filteredList.length} produtos
+                Exibindo {produtosVisiveis.length} de {filteredList.length} produtos
             </p>
             
             <div className="conteinerProduto">
@@ -58,10 +58,10 @@ const PaginaCategoria = () => {
                         <Produto 
                             className="caixaProduto" 
                             key={value.id} 
+                            id={value.id}
                             path={value.caminho} 
                             nome={value.nome} 
-                            preco={value.preco.toFixed(2).replace('.', ',')} 
-                            id={value.id}
+                            preco={value.preco} 
                         />
                     ))
                 ) : (
@@ -69,7 +69,6 @@ const PaginaCategoria = () => {
                 )}
             </div> 
 
-            {/* O botão só aparece se houver mais itens para carregar do que os que estão na tela */}
             {quantidadeExibida < filteredList.length && (
                 <button id="carregarMais" onClick={carregarMais}>
                     Carregar Mais
