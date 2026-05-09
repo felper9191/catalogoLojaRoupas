@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams, useLocation, useSearchParams } from 'react-router-dom';
 import { useSearch } from "../Context/SearchContext";
 import { listaProdutos } from "../dados/produtos"; 
@@ -9,7 +9,7 @@ import "./PaginaCategoria.css"
 
 const PaginaCategoria = () => {
     const { tipo } = useParams(); 
-    const { searchTerm, setSearchTerm } = useSearch();
+    const { searchTerm, setSearchTerm, ordenacao } = useSearch();
     const location = useLocation();
     
     // Gerencia a URL para manter a quantidade de itens ao voltar a página
@@ -29,6 +29,24 @@ const PaginaCategoria = () => {
     const filteredList = produtosDaCategoria.filter((item) => 
         item.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+// 3. NOVO: Ordena a lista usando o useMemo para performance
+    const produtosOrdenados = useMemo(() => {
+        let lista = [...filteredList];
+
+        if (ordenacao === 'menor-preco') {
+            lista.sort((a, b) => a.preco - b.preco);
+        } else if (ordenacao === 'maior-preco') {
+            lista.sort((a, b) => b.preco - a.preco);
+        } else if (ordenacao === 'az') {
+            lista.sort((a, b) => a.nome.localeCompare(b.nome));
+        } else if (ordenacao === 'padrao') {
+            // Se estiver na Home (sem tipo), inverte para mostrar novidades primeiro
+            if (!tipo) lista.reverse(); 
+        }
+        
+        return lista;
+    }, [filteredList, ordenacao, tipo]);
 
     // Aplica o limite baseado na URL
     const produtosVisiveis = filteredList.slice(0, quantidadeExibida);
