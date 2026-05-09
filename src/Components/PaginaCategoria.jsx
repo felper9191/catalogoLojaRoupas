@@ -49,7 +49,7 @@ const PaginaCategoria = () => {
     }, [filteredList, ordenacao, tipo]);
 
     // Aplica o limite baseado na URL
-    const produtosVisiveis = filteredList.slice(0, quantidadeExibida);
+    const produtosVisiveis = produtosOrdenados.slice(0, quantidadeExibida);
 
     const carregarMais = () => {
         setSearchParams(parametrosAnteriores => {
@@ -67,7 +67,7 @@ const PaginaCategoria = () => {
             <HeaderProduto nomeProduto={tituloExibido} />
             
             <p className="quantidadeItens">
-                Exibindo {produtosVisiveis.length} de {filteredList.length} produtos
+                Exibindo {produtosVisiveis.length} de {produtosOrdenados.length} produtos
             </p>
             
             <div className="conteinerProduto">
