@@ -20,6 +20,16 @@
     justify-content: flex-end;
 }
 
+.seletorOrdenacao {
+    background-color: #ededed;
+    border: 1px solid #747474;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.25rem;
+    text-align: center;
+}
+
 .iconsHeaderProduto {
     cursor: pointer;
     font-size: 110%;
