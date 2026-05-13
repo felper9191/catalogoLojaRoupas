@@ -12,7 +12,7 @@ const PaginaCategoria = () => {
     const { tipo } = useParams(); 
     const { searchTerm, setSearchTerm, ordenacao } = useSearch();
     const location = useLocation();
-    
+    const currentPath = location.pathname;
     // Gerencia a URL para manter a quantidade de itens ao voltar a página
     const [searchParams, setSearchParams] = useSearchParams();
     const quantidadeExibida = parseInt(searchParams.get('limit')) || 8;
@@ -20,7 +20,7 @@ const PaginaCategoria = () => {
     // Apenas limpa a barra de busca ao trocar de categoria
     useEffect(() => {
         setSearchTerm(''); 
-    }, [location.pathname, setSearchTerm]);
+    }, [currentPath]);
 
     // LÓGICA DE FILTRAGEM
     const produtosDaCategoria = tipo 
