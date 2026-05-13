@@ -18,7 +18,7 @@ const MenuNav = () => {
             <Link className='linksTipoDeProduto' to="/produtos/vestidos">Vestidos</Link>
             <Link className='linksTipoDeProduto' to="/produtos/jaquetas">Jaquetas</Link>
 
-            <a className='linksSecoes' href="#contato">Contato</a>
+            <link className='linksSecoes' to="#contato">Contato</link>
             <Link className='linksSecoes' to="#">Sobre</Link>
             <Link className='linksSecoes' to="#">Cadastrar</Link>
         </nav>
