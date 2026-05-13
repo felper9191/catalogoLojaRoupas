@@ -8,6 +8,7 @@ import HeaderProduto from "../Components/HeaderProduto";
 import "./PaginaCategoria.css"
 
 const PaginaCategoria = () => {
+    console.log("Componente renderizou");
     const { tipo } = useParams(); 
     const { searchTerm, setSearchTerm, ordenacao } = useSearch();
     const location = useLocation();
