@@ -56,14 +56,15 @@
     .tituloProduto {
         font-size: 1.5rem;
     }
+    .areaIcones {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        width: auto;
+    }
     .seletorOrdenacao {
-        background-color: #ededed;
-        border: 1px solid #747474;
-        border-radius: 0.5rem;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
+        font-size: 1rem;
         padding: 0.5rem 0.25rem;
-        text-align: center;
     }
     .iconsHeaderProduto {
         font-size: 140%;
