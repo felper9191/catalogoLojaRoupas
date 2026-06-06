@@ -1,10 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useCart } from '../Context/CartContext';
 import { listaProdutos } from '../dados/produtos'; // Seu array unificado
 import HeaderProduto from '../Components/HeaderProduto';
 import './PaginaDetalhesProduto.css';
 
 const PaginaDetalhesProduto = () => {
-    const { id } = useParams(); // Pega o ID da URL (ex: /produto/5)
+    const { id } = useParams();
+    const { adicionarAoCarrinho } = useCart();
     const navigate = useNavigate();
 
     // Procuramos o produto dentro do array unificado usando o ID
@@ -42,7 +44,7 @@ const PaginaDetalhesProduto = () => {
                         Produzido com materiais de alta qualidade para garantir conforto e estilo.</p>
                     </div>
 
-                    <button className="botaoComprar">Adicionar ao Carrinho</button>
+                    <button className="botaoComprar" onClick={() => adicionarAoCarrinho(produto)}>Adicionar ao Carrinho</button>
                     
                     <button className="botaoVoltar" onClick={() => navigate(-1)}>
                         ← Voltar

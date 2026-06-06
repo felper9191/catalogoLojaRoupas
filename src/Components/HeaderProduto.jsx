@@ -21,15 +21,20 @@ const HeaderProduto = (props) => {
                         <option value="maior-preco">Maior Preço</option>
                         <option value="az">Nome: A-Z</option>
                     </select>
+                <div>
+                    <FaUser className="iconsHeaderProduto" />
+                </div>
 
-                <FaUser className="iconsHeaderProduto" />
                 <div className="iconeCarrinhoContainer">
                     <FaShoppingCart className="iconsHeaderProduto" />
                     {quantidadeTotal > 0 && (
                         <span className="badgeCarrinho">{quantidadeTotal}</span>
                     )}
                 </div>
-                <FaSearch className="iconsHeaderProduto" />
+                <div>
+                    <FaSearch className="iconsHeaderProduto" />
+                </div>
+
                 <input 
                     type="text" 
                     value={searchTerm} 
