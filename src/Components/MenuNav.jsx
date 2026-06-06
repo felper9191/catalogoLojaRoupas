@@ -18,7 +18,16 @@ const MenuNav = () => {
             <Link className='linksTipoDeProduto' to="/produtos/vestidos">Vestidos</Link>
             <Link className='linksTipoDeProduto' to="/produtos/jaquetas">Jaquetas</Link>
 
-            <Link className='linksSecoes' to=".#contato">Contato</Link>
+            <a 
+                href="#contato" 
+                onClick={(e) => {
+                    e.preventDefault(); // Impede o comportamento padrão de recarregar
+                    document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ cursor: 'pointer' }}
+            >
+            Contato
+            </a>
             <Link className='linksSecoes' to="#">Sobre</Link>
             <Link className='linksSecoes' to="#">Cadastrar</Link>
         </nav>
