@@ -1,9 +1,11 @@
+import { useCart } from '../Context/CartContext';
 import { useSearch } from "../Context/SearchContext";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import "./HeaderProduto.css";
 
 const HeaderProduto = (props) => {
     const { searchTerm, setSearchTerm, ordenacao, setOrdenacao } = useSearch();
+    const { quantidadeTotal } = useCart();
 
     return (
         <div className="cabecalhoProduto">
@@ -21,7 +23,12 @@ const HeaderProduto = (props) => {
                     </select>
 
                 <FaUser className="iconsHeaderProduto" />
-                <FaShoppingCart className="iconsHeaderProduto" />
+                <div className="iconeCarrinhoContainer">
+                    <FaShoppingCart className="iconsHeaderProduto" />
+                    {quantidadeTotal > 0 && (
+                        <span className="badgeCarrinho">{quantidadeTotal}</span>
+                    )}
+                </div>
                 <FaSearch className="iconsHeaderProduto" />
                 <input 
                     type="text" 

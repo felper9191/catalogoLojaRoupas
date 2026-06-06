@@ -19,6 +19,7 @@ const MenuNav = () => {
             <Link className='linksTipoDeProduto' to="/produtos/jaquetas">Jaquetas</Link>
 
             <a 
+                className='linksSecoes' 
                 href="#contato" 
                 onClick={(e) => {
                     e.preventDefault(); // Impede o comportamento padrão de recarregar
