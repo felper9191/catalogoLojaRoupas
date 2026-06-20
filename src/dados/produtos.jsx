@@ -16,6 +16,7 @@ export const listaProdutos = [
     // JAQUETAS
     { id: 'j1', nome: 'Jaqueta01', caminho: '../../img/jaquetas/jaqueta01.jpg', preco: 65.00, categoria: 'jaquetas' },
     { id: 'j10', nome: 'Jaqueta10', caminho: '../../img/jaquetas/jaqueta01.jpg', preco: 56.00, categoria: 'jaquetas' },
+    { id: 'j11', nome: 'Jaqueta11', caminho: '../../img/jaquetas/jaqueta01.jpg', preco: 15.00, categoria: 'jaquetas' },
 
     // CALÇAS
     { id: 'c1', nome: 'Calça01', caminho: '../../img/calcas/calca01.jpg', preco: 65.00, categoria: 'calcas' },

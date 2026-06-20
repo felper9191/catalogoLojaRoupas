@@ -1,8 +1,13 @@
 .sessaoLancamentos {
     background-image: url("../img/modas.jpg");
     background-size: cover;
-    height: 7.5rem;
-    padding: 2rem;
+    background-position: center;
+    min-height: 10rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .tituloLancamentos {
@@ -10,7 +15,8 @@
     font-family: 'Arial', sans-serif;
     font-size: 2rem;
     font-weight: 100;
-    margin-bottom: 3rem;
+    margin: 0;
+    max-width: 600px;
 }
 
 .verLancamentos {
@@ -20,12 +26,15 @@
     cursor: pointer;
     font-size: 1.25rem;
     font-family: 'Trebuchet MS', sans-serif;
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     text-decoration: none;
+    width: fit-content;
+    border-radius: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
     .sessaoLancamentos {
-        height: 15rem;
+        min-height: 15rem;
+        padding: 3rem;
     }
 }

@@ -28,8 +28,9 @@
 
 .fotoProdutoDetalhe {
     width: 100%;
-    max-width: 500px;
-    height: 500px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
