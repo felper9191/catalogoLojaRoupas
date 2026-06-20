@@ -42,7 +42,7 @@ nav {
 @media screen and (min-width: 768px) {
     nav {
         display: flex;
-        height: 80.5vh;
+        height: 81.5vh;
         position: fixed;
         top: 10rem;
         width: 23%;

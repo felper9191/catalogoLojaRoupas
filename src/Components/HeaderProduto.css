@@ -1,60 +1,129 @@
 .cabecalhoProduto {
-    align-items: center;
-    background-color: #fdfdfd;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 0;
-    padding: 0.5rem 0;
-    gap: 0.75rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: #fdfdfd;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tituloProduto {
     color: #0f0f0f;
     font-family: 'Lucida Sans', sans-serif;
-    font-size: 1.25rem;
-    text-shadow: 0.1rem 0.1rem 0.2rem #0f0f0f;
-    text-align: center;
+    font-size: 1.5rem;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
 }
 
 .areaIcones {
-    align-items: center;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 0.75rem;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    min-width: 0;
+}
+
+.controleBuscaGrupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.containerBuscaIcone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.campoBusca {
+    background-color: #ededed;
+    border: 1px solid #747474;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.8rem;
+    padding-right: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.iconeBuscaContainer {
+    position: absolute;
+    right: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #747474;
 }
 
 .seletorOrdenacao {
     background-color: #ededed;
     border: 1px solid #747474;
     border-radius: 0.5rem;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-    padding: 0.25rem 0.05rem;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.8rem;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.grupoIcones {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
+}
+
+.iconBotao,
+.iconeCarrinhoContainer {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #0f0f0f;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    flex: 0 0 auto;
+}
+
+.iconBotao:hover,
+.iconeCarrinhoContainer:hover {
+    background-color: #ededed;
+    border-color: #747474;
 }
 
 .iconsHeaderProduto {
-    border-left: 1px solid #747474;
-    cursor: pointer;
-    font-size: 110%;
-    margin-right: 0.5rem;
-    padding-left: 0.5rem;
+    font-size: 1.15rem;
 }
 
 .iconeCarrinhoContainer {
     position: relative;
-    display: inline-block;
-    cursor: pointer;
 }
 
 .badgeCarrinho {
     position: absolute;
-    top: -12px;
-    right: -5px;
-    background-color: #e74c3c; /* Vermelho padrão de e-commerce */
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
@@ -65,47 +134,131 @@
     align-items: center;
 }
 
-.campoBusca {
-    background-color: #ededed;
-    border: 1px solid #747474;
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
-    padding: 0.25rem;
-    width: 6.75rem;
-    max-width: 100%;
-}
-
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 500px) {
     .cabecalhoProduto {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
     }
+
     .tituloProduto {
         font-size: 1.5rem;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 0.25rem;
     }
+
     .areaIcones {
+        flex-direction: row;
         align-items: center;
-        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .controleBuscaGrupo {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .seletorOrdenacao {
+        flex: 0 0 auto;
+        width: 140px;
+        max-width: 160px;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .containerBuscaIcone {
+        flex: 1 1 auto;
+    }
+
+    .campoBusca {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
+        padding-right: 2.2rem;
+    }
+
+    .grupoIcones {
         justify-content: flex-end;
         width: auto;
+        gap: 0.3rem;
     }
-    .seletorOrdenacao {
-        font-size: 1rem;
-        padding: 0.5rem 0.25rem;
+
+    .iconBotao,
+    .iconeCarrinhoContainer {
+        padding: 0.45rem 0.6rem;
     }
+
     .iconsHeaderProduto {
-        font-size: 140%;
-    }
-    .campoBusca {
         font-size: 1rem;
-        padding: 0.5rem;
-        width: 11rem;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
+    .cabecalhoProduto {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .tituloProduto {
+        font-size: 182%;
+        text-align: left;
+        max-width: 35%;
+        margin-bottom: 0;
+    }
+
+    .areaIcones {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex: 1;
+    }
+
+    .controleBuscaGrupo {
+        gap: 0.75rem;
+        flex: 1;
+    }
+
+    .seletorOrdenacao {
+        flex: 0 0 220px;
+        max-width: 50%;
+        font-size: 0.95rem;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .containerBuscaIcone {
+        flex: 1;
+    }
+
     .campoBusca {
-        width: 13rem;
+        font-size: 0.95rem;
+        padding: 0.65rem 0.8rem;
+        padding-right: 2.5rem;
+    }
+
+    .grupoIcones {
+        width: auto;
+        gap: 0.5rem;
+    }
+
+    .iconBotao,
+    .iconeCarrinhoContainer {
+        padding: 0.55rem 0.75rem;
+    }
+
+    .iconsHeaderProduto {
+        font-size: 1.3rem;
     }
 }
